@@ -46,17 +46,15 @@ function deleteBook(bookId) {
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      console.log(`Book with ID ${bookId} deleted.`);
-      fetchBooks(bookId);
-    })
+      }return response.json();
+
+    }).then(bookId => {
+    console.log(`Book with ID ${bookId} deleted.`);
+    fetchBooks();})
     .catch(error => {
       console.error(error);
     });
 }
-
-
-fetchBooks();
 
 fetch(baseUrl)
   .then(function(response) {
