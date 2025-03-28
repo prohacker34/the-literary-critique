@@ -121,7 +121,6 @@ function setRating(bookId, ratingValue, stars) {
     }
   });
 
-  console.log(`Book ID: ${bookId}, Rating: ${ratingValue}`);
 
   fetch(`${baseUrl}/${bookId}/rating`, {
     method: 'POST',
@@ -137,10 +136,10 @@ function setRating(bookId, ratingValue, stars) {
       return response.json();
     })
     .then(data => {
-      console.log('Rating submitted:', data);
+      console.log(data);
     })
     .catch(error => {
-      console.error('Error submitting rating:', error);
+      console.error( error);
     });
 }
 
