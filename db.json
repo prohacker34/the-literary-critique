@@ -1,16 +1,22 @@
-{"books": [
+{
+  "books": [
     {
-      "id": 1,
+      "id": "1",
       "title": "The Hobbit",
       "author": "J.R.R. Tolkien",
-      "genre":"fiction"
+      "genre": "fiction"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "The Fellowship of the Ring",
       "author": "J.R.R. Tolkien",
-      "genre":"fiction"
-
+      "genre": "fiction"
+    },
+    {
+      "id": "6c27",
+      "title": "Lonely Nights",
+      "author": "Ways",
+      "genre": "fiction"
     }
-]
+  ]
 }
