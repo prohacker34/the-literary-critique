@@ -23,6 +23,12 @@
       "title": "The Guy",
       "author": "John Williams",
       "genre": "fiction"
+    },
+    {
+      "id": "f718",
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "genre": "fiction"
     }
   ]
 }

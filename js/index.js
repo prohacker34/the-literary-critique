@@ -48,7 +48,7 @@ function deleteBook(bookId) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }return response.json();
 
-    }).then(bookId => {
+    }).then(() => {
     console.log(`Book with ID ${bookId} deleted.`);
     fetchBooks();})
     .catch(error => {
