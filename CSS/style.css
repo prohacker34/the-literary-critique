@@ -1,8 +1,9 @@
-;
+body{
+    margin: 0;
+}
 
 nav{
-    display: flex;
-    justify-content: end;
+
     background-color: aquamarine;
     margin: 0%;
     border-radius: 10%;
@@ -13,4 +14,24 @@ nav a{
     text-align: center;
 
 
+}
+#about {
+    background-color: pink;
+    padding: 3rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid #e0d6cc;
+    border-bottom: 1px solid #e0d6cc;
+    margin: 0%;
+}
+#footer{
+    background-color: blueviolet;
+    margin: 0%;
+}
+#contacts{
+    background-color: pink;
+    padding: 3rem 0;
+    margin: 2rem 0;
+    border-top: 1px solid #e0d6cc;
+    border-bottom: 1px solid #e0d6cc;
+    margin: 0%;
 }

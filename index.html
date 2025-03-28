@@ -3,44 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Literary Critque </title>
+    <title>The Literary Critique</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <SCript href="js/index.js" defer></SCript>
+    <script src="js/index.js" defer></script>
 </head>
 <body>
 <nav>
-<a href="#home">Home</a>
-<a href="#about">about</a>
-<a href="#help">help</a>
-<a href="#FAQ">FAQ</a>
-<a href="#contacts">contacts</a>
-<a href="#footer">footer</a>
+    <div id="div1">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contacts">Contacts</a>
+        <a href="#footer">Footer</a>
+    </div>
 </nav>
-<div id="form-container">
-<form id="form">
-    <label for="title"id="title">title</label><br>
-    <input type="text" placeholder="title"id="t1"><br>
-    <label for="author" id="author"> author</label><br>
-    <input type="text"placeholder="author"><br>
-    <label for="genre" id="genre">genre</label><br>
-    <input type="text"placeholder="genre"id="t3"><br>
-<select id="select">
-    <option value="select">select</option>
-    <option value="fiction">fiction</option>
-    <option value="non-fiction">non-fiction</option>
-</select><br>
-    <label for="feedback">feedback</label><br>
-    <textarea name="feedback" id="feedback" cols="30" rows="10" placeholder="share your thoughts on what you have read"></textarea><br>
-    <button type="submit">send</button>
-    <button type="reset">cancel</button>
 
-</form>
-<div id="feedback-display">
-    <form id="display">
-        <textarea cols="30" rows="10"id="td"></textarea>
+<div id="form-container">
+    
+    <form id="form">
+        <label for="title">Title</label><br>
+        <input type="text" placeholder="Title" id="title"><br>
+
+        <label for="author">Author</label><br>
+        <input type="text" placeholder="Author" id="author"><br>
+
+        <label for="genre">Genre</label><br>
+        <input type="text" placeholder="Genre" id="genre"><br>
+
+        <label for="comments">comments</label>
+        <textarea  cols="50" rows="10" id="td"></textarea>
+    </div>
+        <button class="submit" type="submit">Send</button>
+        <button type="reset">Cancel</button>
     </form>
 </div>
+ <div id="shelf">
+    <h1>Shelf</h1>
+    <div id="shelf-display"></div>
 
+ </div>
+
+<div id="feedback-display">
+    <h2>comments</h2>
+    <textarea readonly cols="50" rows="10" id="td"></textarea>
 </div>
+
+<div id="about">
+    <h1>About</h1>
+    <p>Here we write reviews on books and other literary works</p>
+</div>
+
+<div id="contacts">
+    <h1>Contacts</h1><br>
+    Email: habertotieno4@gmail.com
+</div>
+
+<footer id="footer">@2025 Literary Critique</footer>
 </body>
-</html
+</html>
