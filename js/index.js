@@ -40,6 +40,14 @@ addBookForm.addEventListener('submit', event => {
 });
 
 function deleteBook(bookId) {
+  const deleteButtons = document.querySelectorAll('.delete-book');
+deleteButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    let bookId
+    bookId= button.getAttribute('data-book-id');
+
+  });
+});
   fetch(`${baseUrl}/${bookId}`, {
     method: 'DELETE',
   })
@@ -55,6 +63,7 @@ function deleteBook(bookId) {
       console.error(error);
     });
 }
+
 fetch(baseUrl)
   .then(function(response) {
     if (!response.ok) {
