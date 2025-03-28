@@ -56,6 +56,7 @@ function deleteBook(bookId) {
     });
 }
 
+
 fetchBooks();
 
 fetch(baseUrl)
@@ -120,7 +121,7 @@ function setRating(bookId, ratingValue, stars) {
     }
   });
 
-
+  console.log(`Book ID: ${bookId}, Rating: ${ratingValue}`);
 
   fetch(`${baseUrl}/${bookId}/rating`, {
     method: 'POST',
@@ -142,6 +143,7 @@ function setRating(bookId, ratingValue, stars) {
       console.error('Error submitting rating:', error);
     });
 }
+
 
 
 
