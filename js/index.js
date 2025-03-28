@@ -40,6 +40,109 @@ addBookForm.addEventListener('submit', event => {
     });
 });
 
+function deleteBook(bookId) {
+  fetch(`${baseUrl}/${bookId}`, {
+    method: 'DELETE',
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      console.log(`Book with ID ${bookId} deleted.`);
+      fetchBooks();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+fetchBooks();
+
+fetch(baseUrl)
+  .then(function(response) {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(function(books) {
+    console.log( books);
+    displayBooks(books);
+  })
+  .catch(function(error) {
+    console.error( error);
+  });
+
+  function displayBooks(books) {
+    const textDisplay = document.getElementById("shelf-display");
+    let displayContent = '';
+
+    books.forEach(book => {
+      displayContent += `
+        <div class="book">
+          <p><strong>Title:</strong> ${book.title}</p>
+          <p><strong>Author:</strong> ${book.author}</p>
+          <p><strong>Genre:</strong> ${book.genre}</p>
+         <button class="delete-book" data-book-id="${book.id}">Delete</button>
+          <div class="rating" data-book-id="${book.id}">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
+        </div>
+        <hr>
+      `;
+    });
+
+    textDisplay.innerHTML = displayContent;
+
+  const ratingElements = document.querySelectorAll('.rating');
+  ratingElements.forEach(ratingElement => {
+    const stars = ratingElement.querySelectorAll('.star');
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const bookId = ratingElement.getAttribute('data-book-id');
+        const ratingValue = star.getAttribute('data-value');
+        setRating(bookId, ratingValue, stars);
+      });
+    });
+  });
+}
+
+function setRating(bookId, ratingValue, stars) {
+  stars.forEach(star => {
+    if (parseInt(star.getAttribute('data-value')) <= ratingValue) {
+      star.classList.add('selected');
+    } else {
+      star.classList.remove('selected');
+    }
+  });
+
+
+
+  fetch(`${baseUrl}/${bookId}/rating`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ rating: ratingValue }),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Rating submitted:', data);
+    })
+    .catch(error => {
+      console.error('Error submitting rating:', error);
+    });
+}
+
 
 
 

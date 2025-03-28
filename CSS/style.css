@@ -35,3 +35,9 @@ nav a{
     border-bottom: 1px solid #e0d6cc;
     margin: 0%;
 }
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0%;
+}
