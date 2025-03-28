@@ -2,11 +2,11 @@
 in this project we will cover html,css,dom manipulation,using fetch API for CRUD operations.
 
 ## Concepts involved
- adding event listeners
- using fetch() to POST DELETE and GET
- HTML
- CSS
- DOM manipulation
+ 1. adding event listeners
+ 2.  using fetch() to POST DELETE and GET
+ 3. HTML
+ 4. fCSS
+ 5. DOM manipulation
 
 ### System Requirments
 JSON server

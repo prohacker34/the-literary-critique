@@ -1,5 +1,5 @@
 
-let baseUrl = 'http://localhost:3000/books';
+let baseUrl = 'http://localhost:5500/books';
 
 const addBookForm = document.getElementById('add-book-form');
 addBookForm.addEventListener('submit', event => {
@@ -14,7 +14,6 @@ addBookForm.addEventListener('submit', event => {
     alert('Please fill out all fields.');
     return;
   }
-
   const newBook = { title, author, genre };
   fetch(baseUrl, {
     method: 'POST',
@@ -49,7 +48,7 @@ function deleteBook(bookId) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       console.log(`Book with ID ${bookId} deleted.`);
-      fetchBooks();
+      fetchBooks(bookId);
     })
     .catch(error => {
       console.error(error);
@@ -76,7 +75,7 @@ fetch(baseUrl)
 
   function displayBooks(books) {
     const textDisplay = document.getElementById("shelf-display");
-    let displayContent = '';
+    let displayContent
 
     books.forEach(book => {
       displayContent += `
@@ -120,8 +119,6 @@ function setRating(bookId, ratingValue, stars) {
       star.classList.remove('selected');
     }
   });
-
-
   fetch(`${baseUrl}/${bookId}/rating`, {
     method: 'POST',
     headers: {
