@@ -26,6 +26,8 @@ nav a{
 #footer{
     background-color: blueviolet;
     margin: 0%;
+    display: flex;
+    justify-content: center;
 }
 #contacts{
     background-color: pink;
