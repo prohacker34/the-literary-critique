@@ -55,7 +55,6 @@ function deleteBook(bookId) {
       console.error(error);
     });
 }
-
 fetch(baseUrl)
   .then(function(response) {
     if (!response.ok) {
